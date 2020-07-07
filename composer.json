@@ -21,6 +21,13 @@
             "Vasilysmolin\\smo\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vasilysmolin\\smo\\SmoServiceProvider"
+            ]
+        }
+    },
     "require": {
         "php" : "^7.2.5",
         "illuminate/auth": "^5.8|^6.0|^7.0",
