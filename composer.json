@@ -1,14 +1,19 @@
 {
-    "name": "vasilysmolin/greate",
+    "name": "vasilysmolin/smo",
     "description": "greate library",
     "type": "composer-plugin",
     "license": "MIT",
+    "keywords": [
+        "smo",
+        "laravel"
+    ],
     "authors": [
         {
             "name": "vasily.smolin",
             "email": "vasily.smolin@spiti.ru"
         }
     ],
+    "homepage": "https://github.com/vasilysmolin/smo",
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
@@ -16,5 +21,19 @@
             "Vasilysmolin\\smo\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "php" : "^7.2.5",
+        "illuminate/auth": "^5.8|^6.0|^7.0",
+        "illuminate/container": "^5.8|^6.0|^7.0",
+        "illuminate/contracts": "^5.8|^6.0|^7.0",
+        "illuminate/database": "^5.8|^6.0|^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.8|^4.0|^5.0",
+        "phpunit/phpunit": "^8.0|^9.0",
+        "predis/predis": "^1.1"
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
 }
