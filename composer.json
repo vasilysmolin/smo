@@ -1,0 +1,20 @@
+{
+    "name": "vasilysmolin/greate",
+    "description": "greate library",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "vasily.smolin",
+            "email": "vasily.smolin@spiti.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Vasilysmolin\\smo\\": "src/"
+        }
+    },
+    "require": {}
+}
