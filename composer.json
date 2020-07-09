@@ -41,6 +41,6 @@
         "predis/predis": "^1.1"
     },
     "scripts": {
-        "test": "phpunit"
+        "test": "vendor/bin/phpunit"
     }
 }

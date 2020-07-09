@@ -7,8 +7,6 @@ use Illuminate\Support\Collection;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
-use Spatie\Permission\Contracts\Role as RoleContract;
-use Spatie\Permission\Contracts\Permission as PermissionContract;
 
 class SmoServiceProvider extends ServiceProvider
 {
@@ -30,10 +28,10 @@ class SmoServiceProvider extends ServiceProvider
             Commands\CacheReset::class
         ]);
 
-        $this->registerModelBindings();
+//        $this->registerModelBindings();
 //
-        $permissionLoader->clearClassPermissions();
-        $permissionLoader->registerPermissions();
+//        $permissionLoader->clearClassPermissions();
+//        $permissionLoader->registerPermissions();
 
 //        $this->app->singleton(PermissionRegistrar::class, function ($app) use ($permissionLoader) {
 //            return $permissionLoader;
@@ -47,7 +45,51 @@ class SmoServiceProvider extends ServiceProvider
             'permission'
         );
 
+//        $this->app->bind('smo', function () {
+//            return new Smo;
+//        }, true);
+//        $this->app->bindIf('smo', function () {
+//            return new Smo;
+//        }, true);
+//        $this->app->singleton('smo', function ($app) {
+//            return new Smo;
+//        });
+//
+//
+//        $this->app->bindMethod('smoBind', function (){
+//            return 1123;
+//        });
+//        $this->app->instance('smo', Smo::class);
+//        $this->app->alias('smo', Smo::class);
+//        $r = \Closure::fromCallable(function (){
+//            return 2 + 3;
+//        });
+//        $this->app->extend('smo', $r);
+//        dd($this->app->make('smo'));
+//        dd($this->app->isAlias(Smo::class));
+//        dd($this->app->make(Smo::class));
+//        $this->app->__set(222,2);
+//        dd($this->app->__get(222));
+//        dd($this->app->bound(Smo::class));
+//        dd($this->app->has('smo'));
+//        dd($this->app->resolved(Smo::class));
+//        dd($this->app->isShared('smo'));
+//        dd($this->app->hasMethodBinding('smoBind'));
+
+//        dd($this->app->callMethodBinding('smoBind',Smo::class));
+//            dd(SmoFacade::generate());
+
 //        $this->registerBladeExtensions();
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return [Smo::class, 'smo'];
     }
 
     protected function registerModelBindings()
@@ -58,8 +100,8 @@ class SmoServiceProvider extends ServiceProvider
             return;
         }
 
-        $this->app->bind(PermissionContract::class, $config['permission']);
-        $this->app->bind(RoleContract::class, $config['role']);
+//        $this->app->bind(PermissionContract::class, $config['permission']);
+//        $this->app->bind(RoleContract::class, $config['role']);
     }
 
     protected function registerBladeExtensions()
